@@ -153,13 +153,128 @@ header {
     text-decoration: none;
 }
 
+/* --------------- 4.3 Projects ------------------- */
+.projects {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--theme-light-background-color);
+    padding: 5em;
+    row-gap: 5em;
+}
+
+.projects article {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.projects article:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.project-information {
+    padding: 2em;
+    flex-basis: 450px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.project-information h2 {
+    font-size: 2em;
+}
+
+.project-information img {
+    margin: 2.5em 0 3em 0;
+}
+
+.project-information p {
+    font-size: 1.25em;
+    font-weight: 400;
+    margin: 0 0 2em 0;
+}
+
+.project-information a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--theme-tertiary-color);
+    font-weight: 500;
+}
+
+.project-image {
+    flex-basis: 800px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.project-image img {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+}
+
 /* ------------------------------- 5. Media Queries -------------------------------- */
 @media screen and (max-width: 576px) {
+    /*
+     * Ik wou kijken of ik alles direct netjes kreeg door de font-size aan te passen zodat de "em" maten mee schalen.
+     * Dat ging alleen niet overal lekker dus soms was het nodig om de "em" maat in een media query aan te passen.
+     * Is dat oké?
+     */
+    html {
+        font-size: 20px;
+    }
+
+    /* --------------- Header ------------------------- */
     nav ul {
         justify-content: center;
     }
 
     nav ul li a {
         font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* --------------- Introduction ------------------- */
+    .introduction h2 {
+        font-size: 1.5em;
+    }
+
+    .introduction p {
+        margin: 2em 0 0 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    /* --------------- Projects ------------------- */
+    .projects {
+        padding: 1.5em;
+        row-gap: 1em;
+    }
+
+    .project-information {
+        padding: 0;
+        flex-basis: auto;
+    }
+
+    .project-information h2 {
+        margin-top: 1em;
+    }
+
+    /*
+     * Extra `.projects article:nth-child(even)` selector was nodig omdat de vorige anders niet overschreven werd omdat
+     * `.projects article` minder specifiek is dan de eerder buiten deze media query gedeclareerde
+     * `.projects article:nth-child(even)` selector.
+     */
+    .projects article,
+    .projects article:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .project-image {
+        order: 0;
+        flex-basis: auto;
+    }
+
+    .project-information {
+        order: 1;
     }
 }
