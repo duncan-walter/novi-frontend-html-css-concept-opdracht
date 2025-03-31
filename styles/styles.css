@@ -19,6 +19,7 @@
     --theme-secondary-color: #ED4385;
     --theme-tertiary-color: #5722CD;
     --theme-black-color: #0C0C0C;
+    --theme-white-color: #FFFFFF;
     --theme-floaty-color: #F2F0FF;
 
     --theme-light-background-color: #F3F6F9;
@@ -31,9 +32,27 @@
     padding: 0;
 }
 
-/* ------------------------------- 2. Typography ----------------------------------- */
-body {
+body, input {
     color: var(--theme-black-color);
+}
+
+button {
+    color: var(--theme-white-color);
+    background-color: var(--theme-secondary-color);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border: none;
+    border-radius: 1000px;
+    padding: 1.5em 3em;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+html {
+    font-size: 16px;
+}
+
+body, button, input {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -41,16 +60,83 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Merriweather', serif;
 }
 
+h1 {
+    font-size: 3em;
+}
+
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 /* --------------- 3.1 Reusables ----------------------- */
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    justify-content: center;
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 1000px;
+    padding: 0 1em;
+}
 
 /* --------------- 3.2 Other --------------------------- */
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
+nav {
+    padding: 2em 4em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 4em;
+}
+
+nav ul li a {
+    color: var(--theme-white-color);
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: 300;
+}
+
+header {
+    color: var(--theme-white-color);
+    background: linear-gradient(90deg, var(--theme-primary-color) 0%, var(--theme-tertiary-color) 100%);
+    text-align: center;
+}
+
+.header-content {
+    margin: 7.5em 0 0 0;
+}
+
+.header-content p {
+    font-size: 1.75em;
+    font-weight: 300;
+    margin: 1.5em 0;
+}
+
+.header-content button {
+    display: inline;
+}
+
+.header-bottom {
+    margin: 10em 0 0 0;
+}
 
 /* --------------- 4.2 Introduction ------------------- */
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
+@media screen and (max-width: 576px) {
+    nav ul {
+        justify-content: center;
+    }
+
+    nav ul li a {
+        font-weight: 500;
+    }
+}
