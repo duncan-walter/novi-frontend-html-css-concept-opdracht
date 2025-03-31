@@ -123,7 +123,30 @@
     </section>
 </main>
 <footer>
-    <section class="contact" id="contact"></section>
+    <div class="outer-container">
+        <section class="contact inner-container" id="contact">
+            <h2>Let's work together</h2>
+            <p>Have a question? Need a quote? Let us know!</p>
+            <!-- action ontbreekt want we sturen nog niets op naar een server-->
+            <form action="" method="post">
+                <label for="contact-form-name">Name</label>
+                <input type="text" name="name" id="contact-form-name" placeholder="Name">
+
+                <label for="contact-e-mail">E-mail</label>
+                <input type="email" name="e-mail" id="contact-e-mail" placeholder="E-mail">
+
+                <label for="contact-form-message">Message</label>
+                <textarea name="message"
+                          id="contact-form-message"
+                          placeholder="Message"
+                          rows="10"
+                          cols="50"></textarea>
+                <div>
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </section>
+    </div>
 </footer>
 </body>
 </html>

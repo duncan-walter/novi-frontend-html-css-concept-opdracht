@@ -24,6 +24,8 @@
     --theme-floaty-color: #F2F0FF;
 
     --theme-light-background-color: #F3F6F9;
+
+    --theme-background-gradient: linear-gradient(90deg, var(--theme-primary-color) 0%, var(--theme-tertiary-color) 100%);
 }
 
 * {
@@ -32,14 +34,14 @@
     padding: 0;
 }
 
-body, input {
+body, input, textarea {
     color: var(--theme-black-color);
 }
 
 button {
     color: var(--theme-white-color);
     background-color: var(--theme-secondary-color);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
     border: none;
     border-radius: 1000px;
     padding: 1.5em 3em;
@@ -52,7 +54,7 @@ html {
     font-size: 16px;
 }
 
-body, button, input {
+body, button, input, textarea {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -106,7 +108,7 @@ nav ul li a {
 
 header {
     color: var(--theme-white-color);
-    background: linear-gradient(90deg, var(--theme-primary-color) 0%, var(--theme-tertiary-color) 100%);
+    background: var(--theme-background-gradient);
     text-align: center;
 }
 
@@ -118,10 +120,6 @@ header {
     font-size: 1.75em;
     font-weight: 300;
     margin: 1.5em 0;
-}
-
-.header-content button {
-    display: inline;
 }
 
 .header-bottom {
@@ -241,6 +239,60 @@ header {
 
 .services article img {
     width: 96px;
+}
+
+/* --------------- 4.5 Contact ------------------- */
+footer {
+    background: var(--theme-background-gradient);
+    color: var(--theme-white-color);
+    padding: 5em 0;
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 3em;
+}
+
+footer p {
+    font-weight: 300;
+    font-size: 1.25em;
+    margin: 2em 0;
+}
+
+footer form {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+footer label {
+    font-weight: 500;
+}
+
+footer form input {
+    height: 4em;
+}
+
+footer form input, textarea {
+    font-size: 1em;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--theme-gray-color);
+    padding: 1em;
+}
+
+footer form input {
+    margin: 0 0 1.5em 0;
+}
+
+footer form button {
+    margin: 2em 0 0 0;
+    padding: 1.5em 5em;
+}
+
+footer form div {
+    display: flex;
+    justify-content: center;
 }
 
 
