@@ -19,11 +19,11 @@
     --theme-secondary-color: #ED4385;
     --theme-tertiary-color: #5722CD;
     --theme-black-color: #0C0C0C;
+    --theme-gray-color: #7A7A7A;
     --theme-white-color: #FFFFFF;
     --theme-floaty-color: #F2F0FF;
 
     --theme-light-background-color: #F3F6F9;
-    --theme-lighter-background-color: #7A7A7A;
 }
 
 * {
@@ -210,6 +210,39 @@ header {
     width: 100%;
     box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
 }
+
+/* --------------- 4.4 Services ------------------- */
+.services {
+    display: flex;
+    flex-basis: 1000px;
+    flex-grow: 0;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    padding: 5em 0;
+}
+
+.services article {
+    border: 1px solid var(--theme-tertiary-color);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 20px 25px -5px, rgba(0, 0, 0, 0.04) 0 10px 10px -5px;
+    flex-basis: 400px;
+    padding: 2em;
+}
+
+.services article h3 {
+    color: var(--theme-tertiary-color);
+    margin: 1em 0;
+}
+
+.services article p {
+    color: var(--theme-gray-color);
+}
+
+.services article img {
+    width: 96px;
+}
+
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
 @media screen and (max-width: 576px) {
