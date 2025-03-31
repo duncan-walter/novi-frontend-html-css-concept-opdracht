@@ -125,10 +125,33 @@ header {
 }
 
 .header-bottom {
-    margin: 10em 0 0 0;
+    margin: 10em 0 -5px 0;
 }
 
 /* --------------- 4.2 Introduction ------------------- */
+.introduction {
+    margin: 5em 0;
+    gap: 2em;
+    text-align: center;
+}
+
+.introduction h2 {
+    color: var(--theme-tertiary-color);
+    font-size: 2em;
+}
+
+.introduction p {
+    font-size: 1.25em;
+    margin: 5em 0 0 0;
+}
+
+.introduction p a,
+.introduction p a:hover,
+.introduction p a:focus,
+.introduction p a:active {
+    color: var(--theme-tertiary-color);
+    text-decoration: none;
+}
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
 @media screen and (max-width: 576px) {
