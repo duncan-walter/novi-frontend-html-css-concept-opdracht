@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /*////////////////////////
     Table of Contents
     1. Global Styles
@@ -11,8 +13,18 @@
         etc.
     5. Media Queries
 ////////////////////////*/
-
 /* ------------------------------- 1. Global Styles -------------------------------- */
+:root {
+    --theme-primary-color: #4845E4;
+    --theme-secondary-color: #ED4385;
+    --theme-tertiary-color: #5722CD;
+    --theme-black-color: #0C0C0C;
+    --theme-floaty-color: #F2F0FF;
+
+    --theme-light-background-color: #F3F6F9;
+    --theme-lighter-background-color: #7A7A7A;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,6 +32,14 @@
 }
 
 /* ------------------------------- 2. Typography ----------------------------------- */
+body {
+    color: var(--theme-black-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
 
 /* ------------------------------- 3. Layout --------------------------------------- */
 
