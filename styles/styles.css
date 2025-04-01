@@ -34,7 +34,13 @@
     padding: 0;
 }
 
-body, input, textarea {
+body {
+    overflow-x: hidden;
+}
+
+body,
+input,
+textarea {
     color: var(--theme-black-color);
 }
 
@@ -152,7 +158,8 @@ header {
 
 /* --------------- 4.2 Introduction ------------------- */
 .introduction {
-    padding: 5em 0;
+    position: relative;
+    padding: 7.5em 0 10em 0;
     gap: 2em;
     text-align: center;
 }
@@ -175,19 +182,35 @@ header {
     text-decoration: none;
 }
 
+.introduction::after {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    content: 'Hello';
+    font-size: 500px;
+    font-weight: 500;
+    color: var(--theme-floaty-color);
+    z-index: -1;
+    text-transform: lowercase;
+    text-align: center;
+}
+
 /* --------------- 4.3 Projects ------------------- */
 .projects {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: var(--theme-light-background-color);
-    padding: 5em;
+    padding: 17.5em 0 10em 0;
     row-gap: 5em;
+    z-index: 1;
 }
 
 .projects article {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    z-index: 3
 }
 
 .projects article:nth-child(even) {
@@ -233,20 +256,35 @@ header {
     box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
 }
 
+.projects::after {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    content: 'Work';
+    font-size: 500px;
+    font-weight: 500;
+    color: var(--theme-white-color);
+    z-index: 2;
+    text-transform: lowercase;
+    text-align: center;
+}
+
 /* --------------- 4.4 Services ------------------- */
 .services {
     display: flex;
+    position: relative;
     flex-basis: 1000px;
     flex-grow: 0;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2.5em;
-    padding: 5em 0;
+    padding: 20em 0 10em 0;
 }
 
 .services article {
     border: 1px solid var(--theme-tertiary-color);
+    background-color: var(--theme-white-color);
     box-shadow: rgba(0, 0, 0, 0.1) 0 20px 25px -5px, rgba(0, 0, 0, 0.04) 0 10px 10px -5px;
     flex-basis: 400px;
     padding: 2em;
@@ -263,6 +301,19 @@ header {
 
 .services article img {
     width: 96px;
+}
+
+.services::after {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    content: 'Services';
+    font-size: 400px;
+    font-weight: 500;
+    color: var(--theme-floaty-color);
+    z-index: -1;
+    text-transform: lowercase;
+    text-align: center;
 }
 
 /* --------------- 4.5 Contact ------------------- */
@@ -350,12 +401,27 @@ footer form div {
     .introduction p {
         margin: 2em 0 0 0;
     }
+
+    /* ---------------- Floaty text -------------------- */
+    .introduction::after,
+    .projects::after,
+    .services::after {
+        font-size: 150px;
+    }
+
+    .projects::after {
+        top: 120px;
+    }
+
+    .services {
+        padding: 7.5em 0;
+    }
 }
 
 @media screen and (max-width: 992px) {
     /* --------------- Projects ------------------- */
     .projects {
-        padding: 1.5em;
+        padding: 15em 1.5em 5em 1.5em;
         row-gap: 1em;
     }
 
