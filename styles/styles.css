@@ -228,6 +228,16 @@ header {
     font-size: 2em;
 }
 
+/* Dit krijg ik niet helemaal voor elkaar, ik krijg de afbeelding niet geladen. */
+/* De afbeelding laad pas wanneer ik het in de html neerzet Dus voor nu comment ik dit uit, maar ik ging deze kant op: */
+/*.project-information h2::after {*/
+/*    display: block;*/
+/*    content: '';*/
+/*    width: 100px; !* Nog geen idee wat de width zal moeten zijn *!*/
+/*    height: 10px; !* Nog geen idee wat de height zal moeten zijn *!*/
+/*    background-image: url("../assets/squiggle_line.svg");*/
+/*}*/
+
 .project-information img {
     margin: 2.5em 0 3em 0;
 }
