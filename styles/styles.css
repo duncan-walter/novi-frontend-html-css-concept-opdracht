@@ -83,6 +83,30 @@ h1 {
     padding: 0 1em;
 }
 
+.triangle-anchor {
+    position: relative;
+}
+
+.triangle__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 100vw solid var(--theme-white-color);
+    border-top: 50px solid transparent;
+}
+
+.triangle__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 100vw solid transparent;
+    border-top: 50px solid var(--theme-white-color);
+}
+
 /* --------------- 3.2 Other --------------------------- */
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
@@ -128,7 +152,7 @@ header {
 
 /* --------------- 4.2 Introduction ------------------- */
 .introduction {
-    margin: 5em 0;
+    padding: 5em 0;
     gap: 2em;
     text-align: center;
 }
