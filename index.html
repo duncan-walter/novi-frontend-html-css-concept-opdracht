@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<header class="triangle-anchor">
+<header class="triangle-anchor background-noise">
     <div>
         <nav>
             <ul>
@@ -22,7 +22,7 @@
             <h1>Your website is an investment in the success of your business.</h1>
             <p>We are here to help you succeed.</p>
             <div> <!-- Deze <div> heb ik neergezet om te voorkomen dat de <button> veel te breed wordt. -->
-                <button type="button">Let's work together</button>
+                <a href="#contact"><button type="button">Let's work together</button></a>
             </div>
             <div class="header-bottom">
                 <img src="/assets/squiggle_line_stripe.svg" alt="Squiggle Line with Stripe">
@@ -125,7 +125,7 @@
         </article>
     </section>
 </main>
-<footer class="triangle-anchor">
+<footer class="triangle-anchor background-noise">
     <div class="triangle__top"></div>
     <div class="outer-container">
         <section class="contact inner-container" id="contact">
@@ -152,5 +152,14 @@
         </section>
     </div>
 </footer>
+<!--
+Mijn ingebouwde WebStorm webserver had geen zin om afbeeldingen via de url() methode in te laden in CSS.
+Het viel mij op dat wanneer de afbeeldingen in de HTML gebruikt worden, deze wel goed worden meegenomen.
+Daarom heb ik deze workaround bedacht. Door de afbeeldingen hieronder toe te voegen, pakt de webserver ze wel op.
+Daarna kan de url() methode wél binnen CSS gebruikt worden.
+-->
+<div class="image-loading-work-around">
+    <img src="/assets/noise-texture.png" alt="No alt">
+</div>
 </body>
 </html>
