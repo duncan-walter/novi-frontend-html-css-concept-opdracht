@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        etc.
+    5. Media Queries
+////////////////////////*/
+/* ------------------------------- 1. Global Styles -------------------------------- */
+:root {
+    --theme-primary-color: #4845E4;
+    --theme-secondary-color: #ED4385;
+    --theme-tertiary-color: #5722CD;
+    --theme-black-color: #0C0C0C;
+    --theme-gray-color: #7A7A7A;
+    --theme-white-color: #FFFFFF;
+    --theme-floaty-color: #F2F0FF;
+
+    --theme-light-background-color: #F3F6F9;
+
+    --theme-background-gradient: linear-gradient(90deg, var(--theme-primary-color) 0%, var(--theme-tertiary-color) 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body,
+input,
+textarea {
+    color: var(--theme-black-color);
+}
+
+button {
+    color: var(--theme-white-color);
+    background-color: var(--theme-secondary-color);
+    box-shadow: rgba(50, 50, 93, 0.25) 0 13px 27px -5px, rgba(0, 0, 0, 0.3) 0 8px 16px -8px;
+    border: none;
+    border-radius: 1000px;
+    padding: 1.5em 3em;
+    text-transform: uppercase;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.image-loading-work-around {
+    display: none;
+}
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+html {
+    font-size: 16px;
+}
+
+body, button, input, textarea {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+/* --------------- 3.1 Reusables ----------------------- */
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    justify-content: center;
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 1000px;
+    padding: 0 1em;
+}
+
+.triangle-anchor {
+    position: relative;
+}
+
+.triangle__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 100vw solid var(--theme-white-color);
+    border-top: 50px solid transparent;
+}
+
+.triangle__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 100vw solid transparent;
+    border-top: 50px solid var(--theme-white-color);
+}
+
+.background-noise  * {
+    z-index: 2;
+}
+
+.background-noise::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../assets/noise-texture.png");
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* --------------- 3.2 Other --------------------------- */
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+/* --------------- 4.1 Header ------------------------- */
+nav {
+    padding: 2em 4em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 4em;
+}
+
+nav ul li a {
+    color: var(--theme-white-color);
+    text-decoration: none;
+    font-size: 1.25em;
+    font-weight: 300;
+}
+
+header {
+    color: var(--theme-white-color);
+    background: var(--theme-background-gradient);
+    text-align: center;
+}
+
+.header-content {
+    margin: 7.5em 0 0 0;
+}
+
+.header-content p {
+    font-size: 1.75em;
+    font-weight: 300;
+    margin: 1.5em 0;
+}
+
+.header-bottom {
+    margin: 10em 0 -5px 0;
+}
+
+/* --------------- 4.2 Introduction ------------------- */
+.introduction {
+    position: relative;
+    padding: 7.5em 0 10em 0;
+    gap: 2em;
+    text-align: center;
+}
+
+.introduction h2 {
+    color: var(--theme-tertiary-color);
+    font-size: 2em;
+}
+
+.introduction p {
+    font-size: 1.25em;
+    margin: 5em 0 0 0;
+}
+
+.introduction p a,
+.introduction p a:hover,
+.introduction p a:focus,
+.introduction p a:active {
+    color: var(--theme-tertiary-color);
+    text-decoration: none;
+}
+
+
+.introduction::after {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    content: 'Hello';
+    font-size: 465px;
+    font-weight: 500;
+    color: var(--theme-floaty-color);
+    z-index: -1;
+    text-transform: lowercase;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* --------------- 4.3 Projects ------------------- */
+.projects {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--theme-light-background-color);
+    padding: 17.5em 0 10em 0;
+    row-gap: 5em;
+    z-index: 1;
+}
+
+.projects article {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 3
+}
+
+.projects article:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.project-information {
+    padding: 2em;
+    flex-basis: 450px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.project-information h2 {
+    font-size: 2em;
+}
+
+.project-information h2::after {
+    display: block;
+    content: "";
+    height: 10px;
+    margin: .5em 0 1.5em 0;
+    background-image: url("../assets/squiggle_line.svg");
+    background-repeat: no-repeat;
+}
+
+.project-information img {
+    margin: 2.5em 0 3em 0;
+}
+
+.project-information p {
+    font-size: 1.25em;
+    font-weight: 400;
+    margin: 0 0 2em 0;
+}
+
+.project-information a {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--theme-tertiary-color);
+    font-weight: 500;
+}
+
+.project-information a::after {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 25px;
+    background-color: var(--theme-tertiary-color);
+    margin: 0 0 0 1em;
+    transition: .1s ease;
+}
+
+.project-information a:hover::after {
+    width: 75px;
+}
+
+.project-image {
+    flex-basis: 800px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.project-image img {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 25px 50px -12px;
+}
+
+.projects::after {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    content: 'Work';
+    font-size: 500px;
+    font-weight: 500;
+    color: var(--theme-white-color);
+    z-index: 2;
+    text-transform: lowercase;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* --------------- 4.4 Services ------------------- */
+.services {
+    display: flex;
+    position: relative;
+    flex-basis: 1000px;
+    flex-grow: 0;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2.5em;
+    padding: 20em 0 10em 0;
+    overflow: hidden;
+}
+
+.services article {
+    border: 1px solid var(--theme-tertiary-color);
+    background-color: var(--theme-white-color);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 20px 25px -5px, rgba(0, 0, 0, 0.04) 0 10px 10px -5px;
+    flex-basis: 400px;
+    padding: 2em;
+}
+
+.services article h3 {
+    color: var(--theme-tertiary-color);
+    margin: 1em 0;
+}
+
+.services article p {
+    color: var(--theme-gray-color);
+}
+
+.services article img {
+    width: 96px;
+}
+
+.services::after {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    content: 'Services';
+    font-size: 400px;
+    font-weight: 500;
+    color: var(--theme-floaty-color);
+    z-index: -1;
+    text-transform: lowercase;
+    text-align: center;
+}
+
+/* --------------- 4.5 Contact ------------------- */
+footer {
+    background: var(--theme-background-gradient);
+    color: var(--theme-white-color);
+    padding: 5em 0;
+    text-align: center;
+}
+
+footer h2 {
+    font-size: 3em;
+}
+
+footer p {
+    font-weight: 300;
+    font-size: 1.25em;
+    margin: 2em 0;
+}
+
+footer form {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+footer label {
+    font-weight: 500;
+}
+
+footer form input {
+    height: 4em;
+}
+
+footer form input, textarea {
+    font-size: 1em;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--theme-gray-color);
+    padding: 1em;
+}
+
+footer form input {
+    margin: 0 0 1.5em 0;
+}
+
+footer form button {
+    margin: 2em 0 0 0;
+    padding: 1.5em 5em;
+}
+
+footer form div {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
+@media screen and (max-width: 576px) {
+    /*
+     * Ik wou kijken of ik alles direct netjes kreeg door de font-size aan te passen zodat de "em" maten mee schalen.
+     * Dat ging alleen niet overal lekker dus soms was het nodig om de "em" maat in een media query aan te passen.
+     * Is dat oké?
+     */
+    html {
+        font-size: 20px;
+    }
+
+    /* --------------- Header ------------------------- */
+    nav ul {
+        justify-content: center;
+    }
+
+    nav ul li a {
+        font-weight: 500;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* --------------- Introduction ------------------- */
+    .introduction h2 {
+        font-size: 1.5em;
+    }
+
+    .introduction p {
+        margin: 2em 0 0 0;
+    }
+
+    /* ---------------- Floaty text -------------------- */
+    .introduction::after,
+    .projects::after,
+    .services::after {
+        font-size: 150px;
+    }
+
+    .projects::after {
+        top: 120px;
+    }
+
+    .services {
+        padding: 7.5em 0;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    /* --------------- Projects ------------------- */
+    .projects {
+        padding: 15em 1.5em 5em 1.5em;
+        row-gap: 1em;
+    }
+
+    .project-information {
+        padding: 0;
+        flex-basis: auto;
+    }
+
+    .project-information h2 {
+        margin-top: 1em;
+    }
+
+    /*
+     * Extra `.projects article:nth-child(even)` selector was nodig omdat de vorige anders niet overschreven werd omdat
+     * `.projects article` minder specifiek is dan de eerder buiten deze media query gedeclareerde
+     * `.projects article:nth-child(even)` selector.
+     */
+    .projects article,
+    .projects article:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .project-image {
+        order: 0;
+        flex-basis: auto;
+    }
+
+    .project-information {
+        order: 1;
+    }
+}
